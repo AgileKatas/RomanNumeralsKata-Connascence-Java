@@ -6,16 +6,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RomanNumeralsConverterTest {
 
+  private RomanNumeralsConverter converter = new RomanNumeralsConverter("I");
+
   @Test
   public void returnsIFor1() {
-    RomanNumeralsConverter converter = new RomanNumeralsConverter("I");
     String result = converter.toNumeral(1);
     assertThat(result).isEqualTo("I");
   }
 
   @Test
   public void returnsIIFor2() {
-    RomanNumeralsConverter converter = new RomanNumeralsConverter("II");
     String result = converter.toNumeral(2);
     assertThat(result).isEqualTo("II");
   }
