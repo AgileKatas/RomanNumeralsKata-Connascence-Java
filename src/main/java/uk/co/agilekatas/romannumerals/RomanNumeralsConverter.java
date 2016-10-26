@@ -9,10 +9,11 @@ public class RomanNumeralsConverter {
   }
 
   public String toNumeral(int number) {
-    if (number == 2) {
-      return numeral + numeral;
+    String result = "";
+    for (int i = 0; i < number; i++) {
+      result += numeral;
     }
-    return numeral;
+    return result;
   }
 
 }
