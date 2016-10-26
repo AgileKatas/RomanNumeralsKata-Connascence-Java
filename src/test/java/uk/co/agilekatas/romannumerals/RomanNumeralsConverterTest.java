@@ -19,5 +19,11 @@ public class RomanNumeralsConverterTest {
     String result = converter.toNumeral(2);
     assertThat(result).isEqualTo("II");
   }
+
+  @Test
+  public void returnsIIIFor3() {
+    String result = converter.toNumeral(3);
+    assertThat(result).isEqualTo("III");
+  }
   
 }
