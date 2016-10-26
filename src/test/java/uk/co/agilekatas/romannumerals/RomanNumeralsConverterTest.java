@@ -8,7 +8,7 @@ public class RomanNumeralsConverterTest {
 
   @Test
   public void returnsIFor1() {
-    RomanNumeralsConverter converter = new RomanNumeralsConverter();
+    RomanNumeralsConverter converter = new RomanNumeralsConverter("I");
     String result = converter.toNumeral(1);
     assertThat(result).isEqualTo("I");
   }
