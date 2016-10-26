@@ -15,7 +15,7 @@ public class RomanNumeralsConverterTest {
 
   @Test
   public void returnsIIFor2() {
-    RomanNumeralsConverter converter = new RomanNumeralsConverter("I");
+    RomanNumeralsConverter converter = new RomanNumeralsConverter("II");
     String result = converter.toNumeral(2);
     assertThat(result).isEqualTo("II");
   }
