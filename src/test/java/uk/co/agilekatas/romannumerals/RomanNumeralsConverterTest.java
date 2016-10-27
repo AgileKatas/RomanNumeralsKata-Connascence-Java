@@ -25,5 +25,11 @@ public class RomanNumeralsConverterTest {
     String result = converter.toNumeral(3);
     assertThat(result).isEqualTo("III");
   }
+
+  @Test
+  public void returnsIVFor4() {
+    String result = converter.toNumeral(4);
+    assertThat(result).isEqualTo("IV");
+  }
   
 }
