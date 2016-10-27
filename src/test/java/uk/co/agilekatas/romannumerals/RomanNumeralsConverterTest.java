@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RomanNumeralsConverterTest {
 
-  private RomanNumeralsConverter converter = new RomanNumeralsConverter("I");
+  private RomanNumeralsConverter converter = new RomanNumeralsConverter("I", "IV");
 
   @Test
   public void returnsIFor1() {
