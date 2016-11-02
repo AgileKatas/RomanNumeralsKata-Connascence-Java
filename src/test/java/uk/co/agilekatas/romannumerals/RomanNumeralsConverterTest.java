@@ -15,8 +15,8 @@ public class RomanNumeralsConverterTest {
   @Before
   public void setUp() {
     Map<Integer, String> values = new LinkedHashMap<>();
-    values.put(1, "I");
     values.put(4, "IV");
+    values.put(1, "I");
     converter = new RomanNumeralsConverter(values);
   }
 

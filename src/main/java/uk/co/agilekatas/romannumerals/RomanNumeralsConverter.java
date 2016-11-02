@@ -12,13 +12,12 @@ public class RomanNumeralsConverter {
 
   public String toNumeral(int number) {
     String result = "";
-    if (number == 4) {
-      result += values.get(4);
-      number -= 4;
-    }
-    while (number >= 1) {
-      result += values.get(1);
-      number -= 1;
+
+    for (Map.Entry<Integer, String> entry : values.entrySet()) {
+      while (number >= entry.getKey()) {
+        result += entry.getValue();
+        number -= entry.getKey();
+      }
     }
     return result;
   }
