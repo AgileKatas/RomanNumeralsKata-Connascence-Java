@@ -15,19 +15,19 @@ public class RomanNumeralsConverterTest {
   @Before
   public void setUp() {
     Map<Integer, String> values = new LinkedHashMap<>();
-    values.put(1000, "M");
-    values.put(900, "CM");
     values.put(500, "D");
     values.put(400, "CD");
-    values.put(100, "C");
+    values.put(1000, "M");
+    values.put(900, "CM");
     values.put(90, "XC");
-    values.put(50, "L");
+    values.put(100, "C");
     values.put(40, "XL");
-    values.put(10, "X");
+    values.put(50, "L");
     values.put(9, "IX");
-    values.put(5, "V");
-    values.put(4, "IV");
     values.put(1, "I");
+    values.put(10, "X");
+    values.put(4, "IV");
+    values.put(5, "V");
     converter = new RomanNumeralsConverter(values);
   }
 
