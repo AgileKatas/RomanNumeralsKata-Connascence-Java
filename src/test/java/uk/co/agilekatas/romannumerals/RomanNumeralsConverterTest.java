@@ -1,12 +1,24 @@
 package uk.co.agilekatas.romannumerals;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RomanNumeralsConverterTest {
 
-  private RomanNumeralsConverter converter = new RomanNumeralsConverter(1, "I", 4, "IV");
+  private RomanNumeralsConverter converter;
+
+  @Before
+  public void setUp() {
+    Map<Integer, String> values = new LinkedHashMap<>();
+    values.put(1, "I");
+    values.put(4, "IV");
+    converter = new RomanNumeralsConverter(values);
+  }
 
   @Test
   public void returnsIFor1() {
@@ -31,5 +43,5 @@ public class RomanNumeralsConverterTest {
     String result = converter.toNumeral(4);
     assertThat(result).isEqualTo("IV");
   }
-  
+
 }

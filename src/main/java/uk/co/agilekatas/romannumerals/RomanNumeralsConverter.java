@@ -1,28 +1,24 @@
 package uk.co.agilekatas.romannumerals;
 
+import java.util.Map;
+
 public class RomanNumeralsConverter {
 
-  private final Integer arabicForOne;
-  private final String numeralForOne;
-  private final Integer arabicForFour;
-  private final String numeralForFour;
+  private final Map<Integer, String> values;
 
-  public RomanNumeralsConverter(Integer arabicForOne, String numeralForOne, Integer arabicForFour, String numeralForFour) {
-    this.arabicForOne = arabicForOne;
-    this.numeralForOne = numeralForOne;
-    this.arabicForFour = arabicForFour;
-    this.numeralForFour = numeralForFour;
+  public RomanNumeralsConverter(Map<Integer, String> values) {
+    this.values = values;
   }
 
   public String toNumeral(int number) {
     String result = "";
-    if (number == arabicForFour) {
-      result += numeralForFour;
-      number -= arabicForFour;
+    if (number == 4) {
+      result += values.get(4);
+      number -= 4;
     }
-    while (number >= arabicForOne) {
-      result += numeralForOne;
-      number -= arabicForOne;
+    while (number >= 1) {
+      result += values.get(1);
+      number -= 1;
     }
     return result;
   }
