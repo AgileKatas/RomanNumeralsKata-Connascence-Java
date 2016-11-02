@@ -15,12 +15,14 @@ public class RomanNumeralsConverter {
   }
 
   public String toNumeral(int number) {
-    if (number == arabicForFour) {
-      return numeralForFour;
-    }
     String result = "";
-    for (int i = 0; i < number; i++) {
+    if (number == arabicForFour) {
+      result += numeralForFour;
+      number -= arabicForFour;
+    }
+    while (number >= arabicForOne) {
       result += numeralForOne;
+      number -= arabicForOne;
     }
     return result;
   }
