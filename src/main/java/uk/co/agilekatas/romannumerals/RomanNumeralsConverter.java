@@ -1,26 +1,34 @@
 package uk.co.agilekatas.romannumerals;
 
 import java.util.Map;
+import java.util.Stack;
 import java.util.TreeMap;
 
 public class RomanNumeralsConverter {
 
-  private final Map<Integer, String> values;
+  private final Stack<Map.Entry<Integer, String>> stack;
 
   public RomanNumeralsConverter(Map<Integer, String> values) {
-    this.values = new TreeMap<>(values).descendingMap();
+    this.stack = new Stack<>();
+    this.stack.addAll(new TreeMap<>(values).entrySet());
   }
 
   public String toNumeral(int number) {
-    String result = "";
+    return doToNumeral("", number, stack);
+  }
 
-    for (Map.Entry<Integer, String> entry : values.entrySet()) {
-      while (number >= entry.getKey()) {
-        result += entry.getValue();
-        number -= entry.getKey();
-      }
+  private String doToNumeral(String numeral, int number, Stack<Map.Entry<Integer, String>> stack) {
+    if (number == 0) {
+      return numeral;
     }
-    return result;
+    Map.Entry<Integer, String> entry = stack.peek();
+    if (number >= entry.getKey()) {
+      number -= entry.getKey();
+      numeral += entry.getValue();
+    } else {
+      stack.pop();
+    }
+    return doToNumeral(numeral, number, stack);
   }
 
 }
